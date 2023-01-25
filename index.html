@@ -5,17 +5,25 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Shortener Link</title>
+
+        <script src="https://kit.fontawesome.com/fe0ca3f893.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="assets/css/style.css">
     </head>
     <body>
-        <header>
-            <h1>Encurtador de Link</h1>
-        </header>
-        <main>
-            <form>
-                <div class="display-url"></div>
-                <input type="text">
-                <button type="submit">Short</button>
-            </form>
-        </main>
+        <div class="box">
+            <header class="main_header">
+                <h1 class="main_header_title">Encurtador de Link</h1>
+            </header>
+            <main class="main_content">
+                <form class="main_content_form">
+                    <div class="display-url">
+                        O link curto vai aparecer aqui
+                        <span class="copy_btn" title="Copiar link"><i class="fa-regular fa-copy"></i></span>
+                    </div>
+                    <input type="text">
+                    <button type="submit">Short</button>
+                </form>
+            </main>
+        </div>
     </body>
 </html>
