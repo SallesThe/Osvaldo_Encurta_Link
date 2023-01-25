@@ -66,3 +66,22 @@ body {
     font-family: 'Montserrat', sans-serif;
     font-weight: 400;
 }
+
+
+
+footer {
+    position: absolute;
+    bottom: 0;
+    padding: 20px;
+    color: #F7C59F;
+}
+
+footer a {
+    text-decoration: none;
+    color: #ffffff;
+
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
