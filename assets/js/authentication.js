@@ -7,6 +7,14 @@ shortForm.addEventListener("submit", (e) => {
     e.preventDefault();
 
     const longUrl = document.querySelector("#long_url");
+
+    if(longUrl.value == ""){
+        shortUrl.innerHTML = 'Nenhuma URL informada';
+        return;
+    } 
+
+    let treatmentResponse;
+
     const config = {
         method: "POST",
         headers: {
@@ -19,11 +27,20 @@ shortForm.addEventListener("submit", (e) => {
     fetch("https://api-ssl.bitly.com/v4/shorten", config)
         .then((response) => response.json())
         .then((response) => {
-            shortUrl.innerHTML = response.link;
-            copyUrl.disable = "false"; 
+            treatmentResponse = response.link; 
             console.log(response);
+            
         })
-        .catch((err) => console.error(err));
+        .catch((err) => {console.error(err)});
+        
+    longUrl.value = "";
+    
+    if(!treatmentResponse) {
+    shortUrl.innerHTML = "URL INVALIDA"
+    return;
+    }
+
+    shortUrl.innerHTML = treatmentResponse;
 });
 
 copyUrl.addEventListener("click", () => {
