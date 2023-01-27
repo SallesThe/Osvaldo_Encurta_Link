@@ -58,12 +58,17 @@ body {
     height: 100%;
     background-color: #f7c59f;
     border: 3px solid #f3dac6;
+    color: #093a3e;
     padding: 0 10px;
     border-radius: 0 5px 5px 0;
     cursor: pointer;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.short_link {
+    color: #093a3e;
 }
 
 .label-float {

@@ -3,7 +3,7 @@ const shortUrl = document.querySelector(".short_link");
 const copyUrl = document.querySelector(".copy_btn");
 const token = "dea101ea0e249ef000c9b0e1a6dc1d05f563c26f";
 
-shortForm.addEventListener("submit", (e) => {
+shortForm.addEventListener("submit", async (e) => {
     e.preventDefault();
 
     const longUrl = document.querySelector("#long_url");
@@ -23,8 +23,10 @@ shortForm.addEventListener("submit", (e) => {
         },
         body: JSON.stringify({ long_url: longUrl.value, domain: "bit.ly", group_guid: "" })
     };
+    
+    longUrl.value = "";
 
-    fetch("https://api-ssl.bitly.com/v4/shorten", config)
+    await fetch("https://api-ssl.bitly.com/v4/shorten", config)
         .then((response) => response.json())
         .then((response) => {
             treatmentResponse = response.link; 
@@ -33,8 +35,6 @@ shortForm.addEventListener("submit", (e) => {
         })
         .catch((err) => {console.error(err)});
         
-    longUrl.value = "";
-    
     if(!treatmentResponse) {
     shortUrl.innerHTML = "URL INVALIDA"
     return;
@@ -46,6 +46,8 @@ shortForm.addEventListener("submit", (e) => {
 copyUrl.addEventListener("click", () => {
     let copyText = shortUrl.innerText;
 
+    alert("Copiado!")
+    
     navigator.clipboard.write([new ClipboardItem({
         ["text/plain"]: new Blob([copyText], { type: "text/plain" })
     })])
