@@ -1,5 +1,5 @@
 const shortForm = document.querySelector(".main_content_form");
-const shortUrl = document.querySelector(".display-url");
+const shortUrl = document.querySelector(".short_link");
 const copyUrl = document.querySelector(".copy_btn");
 const token = "dea101ea0e249ef000c9b0e1a6dc1d05f563c26f";
 
@@ -11,24 +11,28 @@ shortForm.addEventListener("submit", (e) => {
 
     const config = {
         method: "POST",
-        headers: { 
+        headers: {
             "Content-Type": "application/json",
-            Authorization: `Bearer ${token}` 
+            Authorization: `Bearer ${token}`
         },
-        body: JSON.stringify({long_url: `${longUrl.value}`, domain: "bit.ly", group_guid: ""})
+        body: JSON.stringify({ long_url: longUrl.value, domain: "bit.ly", group_guid: "" })
     };
 
     fetch("https://api-ssl.bitly.com/v4/shorten", config)
         .then((response) => response.json())
         .then((response) => {
-            shortUrl.innerHTML = response.shortUrl;
-            copyUrl.disable = "false"; 
+            shortUrl.innerText = response.link;
+            copyUrl.disable = "false";
         })
         .catch((err) => console.error(err));
 });
- 
+
 copyUrl.addEventListener("click", () => {
-    simpleCopy(shortUrl.innerHTML);
-    alert("Copied");
-    copyUrl.disable = "true";
+    let copyText = shortUrl.innerText;
+
+    navigator.clipboard.write([new ClipboardItem({
+        ["text/plain"]: new Blob([copyText], { type: "text/plain" })
+    })])
+        .then(() => console.log("Copiou"),
+            () => console.log("Não copiou"))
 })
