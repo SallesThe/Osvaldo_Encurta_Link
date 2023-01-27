@@ -1,37 +1,37 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,800;1,300&family=Ubuntu+Mono&display=swap");
 
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-  font-family: "Montserrat", sans-serif;
-  color: #333;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  background-color: #093a3e;
-  background-image: linear-gradient(-45deg, #093a3e, #15767e);
+    font-family: "Montserrat", sans-serif;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #093a3e;
+    background-image: linear-gradient(-45deg, #093a3e, #15767e);
 }
 
 .box {
-  background-color: #f7c59f;
-  padding: 40px 60px;
-  border-radius: 10px;
-  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 40px;
-  max-width: 600px;
+    background-color: #f7c59f;
+    padding: 40px 60px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 40px;
+    max-width: 600px;
 }
 
 .main_header {
-  flex-basis: 100%;
+    flex-basis: 100%;
 }
 
 .main_header_title {
@@ -39,36 +39,31 @@ body {
 }
 
 .main_content {
-  flex-basis: 100%;
+    flex-basis: 100%;
 }
 
 .display-url {
-  font-family: "Ubuntu Mono", monospace;
-  margin-bottom: 40px;
-  background-color: #f3dac6;
-  padding: 10px;
-  position: relative;
-  border-radius: 5px;
+    font-family: "Ubuntu Mono", monospace;
+    margin-bottom: 40px;
+    background-color: #f3dac6;
+    padding: 10px;
+    position: relative;
+    border-radius: 5px;
 }
 
 .copy_btn {
-  position: absolute;
-  top: 0;
-  right: 0;
-  height: 100%;
-  background-color: #f7c59f;
-  border: 3px solid #f3dac6;
-  padding: 0 10px;
-  border-radius: 0 5px 5px 0;
-  cursor: pointer;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.main_content_form input {
-  font-family: "Montserrat", sans-serif;
-  font-weight: 400;
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    background-color: #f7c59f;
+    border: 3px solid #f3dac6;
+    padding: 0 10px;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .label-float {
@@ -76,42 +71,48 @@ body {
 }
 
 #long_url {
-  border: 0;
-  border-bottom: 2px solid #093a3e;
-  background: none;
-  outline: none;
-  transition: 0.3s ease-out;
-  width: 100%;
-  z-index: 2;
+    font-family: inherit;
+    font-weight: 400;
+    padding: 10px 0;
+    border: 0;
+    border-bottom: 2px solid #093a3e;
+    background: none;
+    outline: none;
+    transition: 0.3s ease-out;
+    width: 100%;
+    z-index: 2;
 }
 
 #long_url:focus {
-  border-bottom: 3px solid #093a3e;
+    border-bottom: 3px solid #093a3e;
 }
 
 .label_url {
-  pointer-events: none;
-  position: absolute;
-  color: #093a3e;
-  top: 0;
-  left: 0;
-  margin-top: -5px;
-  transition: all 0.3s ease-out;
+    pointer-events: none;
+    position: absolute;
+    color: #093a3e;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    margin-top: -5px;
+    transition: all 0.3s ease-out;
 }
 
-#long_url:focus + .label_url {
+#long_url:focus+.label_url {
     font-size: 12px;
     margin-top: -20px;
 
 }
 
 .short-btn {
+    font-family: inherit;
     position: absolute;
-    top: 0;
+    top: 50%;
     right: 0;
+    transform: translateY(-50%);
     background-color: #093a3e;
     color: white;
-    padding: 5px;
+    padding: 5px 20px;
     border-radius: 10px;
     outline: none;
     border: none;
@@ -119,17 +120,17 @@ body {
 }
 
 footer {
-  position: absolute;
-  bottom: 0;
-  padding: 20px;
-  color: #f7c59f;
+    position: absolute;
+    bottom: 0;
+    padding: 20px;
+    color: #f7c59f;
 }
 
 footer a {
-  text-decoration: none;
-  color: #ffffff;
+    text-decoration: none;
+    color: #ffffff;
 }
 
 footer a:hover {
-  text-decoration: underline;
+    text-decoration: underline;
 }
