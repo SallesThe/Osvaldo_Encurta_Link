@@ -8,10 +8,10 @@ shortForm.addEventListener("submit", async (e) => {
 
     const longUrl = document.querySelector("#long_url");
 
-    if(longUrl.value == ""){
+    if (longUrl.value == "") {
         shortUrl.innerHTML = 'Nenhuma URL informada';
         return;
-    } 
+    }
 
     let treatmentResponse;
 
@@ -26,18 +26,31 @@ shortForm.addEventListener("submit", async (e) => {
     
     longUrl.value = "";
 
+<<<<<<< HEAD
+=======
+    longUrl.value = "";
+
+>>>>>>> 837b384a7ab422d369f50601bea4ac248909692f
     await fetch("https://api-ssl.bitly.com/v4/shorten", config)
         .then((response) => response.json())
         .then((response) => {
-            treatmentResponse = response.link; 
-            console.log(response);
-            
+            treatmentResponse = response.link ?? null;
+            console.log(response.link);
+
         })
+<<<<<<< HEAD
         .catch((err) => {console.error(err)});
         
     if(!treatmentResponse) {
     shortUrl.innerHTML = "URL INVALIDA"
     return;
+=======
+        .catch((err) => { console.error(err) });    
+
+    if (!treatmentResponse) {
+        shortUrl.innerHTML = "URL INVALIDA"
+        return;
+>>>>>>> 837b384a7ab422d369f50601bea4ac248909692f
     }
 
     shortUrl.innerHTML = treatmentResponse;
