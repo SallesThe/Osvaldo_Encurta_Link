@@ -7,8 +7,6 @@ shortForm.addEventListener("submit", (e) => {
     e.preventDefault();
 
     const longUrl = document.querySelector("#long_url");
-    //const checkUrl = checkUrl();
-
     const config = {
         method: "POST",
         headers: { 
@@ -21,8 +19,9 @@ shortForm.addEventListener("submit", (e) => {
     fetch("https://api-ssl.bitly.com/v4/shorten", config)
         .then((response) => response.json())
         .then((response) => {
-            shortUrl.innerHTML = response.shortUrl;
+            shortUrl.innerHTML = response.link;
             copyUrl.disable = "false"; 
+            console.log(response);
         })
         .catch((err) => console.error(err));
 });

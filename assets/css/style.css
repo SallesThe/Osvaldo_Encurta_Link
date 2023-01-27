@@ -1,87 +1,114 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,800;1,300&family=Ubuntu+Mono&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,800;1,300&family=Ubuntu+Mono&display=swap");
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: 'Montserrat', sans-serif;
-    color: #333;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background-color: #093A3E;
-    background-image: linear-gradient(-45deg, #093A3E, #15767e);
+  font-family: "Montserrat", sans-serif;
+  color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #093a3e;
+  background-image: linear-gradient(-45deg, #093a3e, #15767e);
 }
 
 .box {
-    background-color: #F7C59F;
-    padding: 40px 60px;
-    border-radius: 10px;
-    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 40px;
-    max-width: 600px;
+  background-color: #f7c59f;
+  padding: 40px 60px;
+  border-radius: 10px;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 40px;
+  max-width: 600px;
 }
 
 .main_header {
-    flex-basis: 100%;
+  flex-basis: 100%;
 }
 
-.main_content {    
-    flex-basis: 100%
+.main_content {
+  flex-basis: 100%;
 }
 
 .display-url {
-    font-family: 'Ubuntu Mono', monospace;
-    margin-bottom: 20px;
-    background-color: #f3dac6;
-    padding: 10px;
-    position: relative;
-    border-radius: 5px;
+  font-family: "Ubuntu Mono", monospace;
+  margin-bottom: 20px;
+  background-color: #f3dac6;
+  padding: 10px;
+  position: relative;
+  border-radius: 5px;
 }
 
 .copy_btn {
-    position: absolute;
-    top: 0;
-    right: 0;
-    height: 100%;
-    background-color: #F7C59F;
-    border: 3px solid #f3dac6;
-    padding: 0 10px;
-    border-radius: 0 5px 5px 0;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  background-color: #f7c59f;
+  border: 3px solid #f3dac6;
+  padding: 0 10px;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main_content_form {
+  border: 2px solid red;
 }
 
 .main_content_form input {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 400;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
 }
 
+.label-float {
+    position: relative;
+}
 
+#long_url {
+  border: 0;
+  border-bottom: 2px solid #333;
+  background: none;
+  outline: none;
+  transition: all 0.3s ease-out;
+  width: 100%;
+  z-index: 2;
+}
+
+#long_url:focus {
+  border-bottom: 4px solid red;
+}
+
+.label_url {
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: all 0.3s ease-out;
+}
 
 footer {
-    position: absolute;
-    bottom: 0;
-    padding: 20px;
-    color: #F7C59F;
+  position: absolute;
+  bottom: 0;
+  padding: 20px;
+  color: #f7c59f;
 }
 
 footer a {
-    text-decoration: none;
-    color: #ffffff;
-
+  text-decoration: none;
+  color: #ffffff;
 }
 
 footer a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
