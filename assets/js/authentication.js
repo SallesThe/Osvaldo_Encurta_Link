@@ -11,12 +11,11 @@ shortForm.addEventListener("submit", (e) => {
 
     const config = {
         method: "POST",
-        headers: {
-            accept: "application/json", 
-            "content-type": "application/json",
-            api_key: "dea101ea0e249ef000c9b0e1a6dc1d05f563c26f"
+        headers: { 
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}` 
         },
-        body: JSON.stringify({destination: longUrl.value})
+        body: JSON.stringify({long_url: `${longUrl.value}`, domain: "bit.ly", group_guid: ""})
     };
 
     fetch("https://api-ssl.bitly.com/v4/shorten", config)
